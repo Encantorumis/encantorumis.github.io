@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Encantorumis – Amigurumis Artesanais</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Quicksand", sans-serif;
+        background: linear-gradient(#fdefff, #dff7ff);
+        color: #444;
+    }
+
+    header {
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    header img.logo {
+        width: 240px;
+        animation: flutuar 4s ease-in-out infinite;
+    }
+
+    @keyframes flutuar {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0); }
+    }
+
+    h1 {
+        font-size: 3rem;
+        color: #b46ad4;
+        margin: 10px 0;
+        text-shadow: 2px 2px 0px white;
+    }
+
+    h2.section-title {
+        font-size: 2rem;
+        color: #a95fd4;
+        text-align: center;
+        margin-top: 40px;
+        text-shadow: 1px 1px 0 white;
+    }
+
+    .galeria {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .item {
+        width: 200px;
+        background: white;
+        border-radius: 20px;
+        padding: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: transform .3s;
+        cursor: pointer;
+    }
+
+    .item:hover {
+        transform: scale(1.05);
+    }
+
+    .item img {
+        width: 100%;
+        border-radius: 15px;
+    }
+
+    .item p {
+        text-align: center;
+        font-weight: bold;
+        color: #7b42a8;
+    }
+
+    .botao {
+        background: #b46ad4;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 30px;
+        display: inline-bloc
