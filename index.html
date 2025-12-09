@@ -35,6 +35,22 @@
     }
 
     body {
+      <header class="site-header">
+  <div class="header-container">
+
+    <a href="/" class="logo-link">
+      <img src="logo.png" alt="Encantorumis" class="logo-img" />
+    </a>
+
+    <nav class="menu">
+      <a href="#produtos">Produtos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+  </div>
+</header>
+
       margin: 0;
       font-family: "Poppins", sans-serif;
       background: var(--rosa-claro);
@@ -42,9 +58,9 @@
     }
 
     header {
-    <header class="site-header">
-  <img src="imagens/logo.png" alt="Logo Encantorumis" class="logo">
-</header> }
+<header class="site-header">
+  <img src="logo.png" alt="Logo Encantorumis" class="logo">
+</header>
 
     nav {
       display: flex;
@@ -137,6 +153,71 @@
     }
 
   </style>.site-header {
+/* ===== HEADER ENCANTORUMIS ===== */
+
+.site-header {
+  width: 100%;
+  background: linear-gradient(90deg, var(--rosa-escuro), var(--roxo));
+  padding: 10px 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo-img {
+  height: 80px;
+  width: auto;
+  transition: transform .25s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+.menu {
+  display: flex;
+  gap: 24px;
+}
+
+.menu a {
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: none;
+  transition: opacity .2s ease;
+}
+
+.menu a:hover {
+  opacity: 0.7;
+}
+
+/* --- Mobile --- */
+@media (max-width: 600px) {
+  .header-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logo-img {
+    height: 65px;
+  }
+
+  .menu {
+    gap: 16px;
+  }
+
+  .menu a {
+    font-size: 16px;
+  }
+}
   display: flex;
   justify-content: center;
   align-items: center;
