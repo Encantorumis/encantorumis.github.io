@@ -122,7 +122,24 @@
       animation: fadeIn 1s ease;
     }
 
-  </style>
+  </style>.site-header {
+  background: linear-gradient(90deg, var(--rosa-escuro), var(--roxo));
+  padding: 14px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 64px;         /* altura visível do logo na barra */
+  width: auto;
+  max-width: 240px;     /* evita que cresça demais em telas grandes */
+  display: block;
+}
+@media (max-width: 480px){
+  .logo { height: 48px; } /* ajusta em celulares */
+}
+
 </head>
 <body>
 
