@@ -6,157 +6,196 @@
   <title>Encantorumis - Loja de Amigurumis</title>
   <style>
     :root {
-      --rosa-claro: #ffeaf2;
-      --rosa: #ff9acb;
-      --roxo: #c7b3ff;
-      --azul: #bde7ff;
-      --amarelo: #fff4b8;
-      --texto: #5a4a57;
+      --rosa-claro: #ffe4f2;
+      --rosa-medio: #ff9aca;
+      --rosa-escuro: #ff62b6;
+      --roxo: #c06cd9;
+      --sombra: rgba(0,0,0,0.12);
     }
 
     body {
       margin: 0;
       font-family: "Poppins", sans-serif;
       background: var(--rosa-claro);
-      color: var(--texto);
-      text-align: center;
+      color: #333;
     }
 
     header {
-      position: relative;
-      padding: 40px 20px 80px;
-      background: linear-gradient(180deg, #ffeaf2 0%, #fff6fb 100%);
+      background: linear-gradient(90deg, var(--rosa-escuro), var(--roxo));
+      padding: 25px;
+      text-align: center;
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    /* Círculo pastel com estrelas */
-    .circle-bg {
-      width: 260px;
-      height: 260px;
-      background: radial-gradient(circle, #ffeaf2 0%, #fce4ff 40%, #e3d7ff 100%);
-      border-radius: 50%;
-      margin: 0 auto;
-      position: relative;
+    nav {
       display: flex;
-      align-items: center;
       justify-content: center;
-      box-shadow: 0 0 25px rgba(255, 182, 239, 0.4);
+      gap: 25px;
+      background: white;
+      padding: 12px 0;
+      box-shadow: 0 2px 10px var(--sombra);
+      position: sticky;
+      top: 70px;
+      z-index: 999;
     }
 
-    .star {
-      position: absolute;
-      width: 18px;
-      height: 18px;
-      background: var(--amarelo);
-      clip-path: polygon(
-        50% 0%, 61% 35%, 98% 35%,
-        68% 57%, 79% 91%, 50% 70%,
-        21% 91%, 32% 57%, 2% 35%,
-        39% 35%
-      );
-      opacity: 0.8;
-      animation: shine 3s infinite ease-in-out;
+    nav a {
+      text-decoration: none;
+      color: var(--rosa-escuro);
+      font-weight: bold;
+      transition: 0.3s;
     }
 
-    .star:nth-child(1) { top: 10%; left: 18%; animation-delay: 0s; }
-    .star:nth-child(2) { top: 20%; right: 15%; animation-delay: 0.6s; }
-    .star:nth-child(3) { bottom: 18%; left: 25%; animation-delay: 1.2s; }
-    .star:nth-child(4) { bottom: 22%; right: 20%; animation-delay: 1.8s; }
-
-    @keyframes shine {
-      0%, 100% { transform: scale(1); opacity: 0.7; }
-      50% { transform: scale(1.3); opacity: 1; }
+    nav a:hover {
+      color: var(--roxo);
     }
 
-    .logo-img {
-      width: 150px;
-      z-index: 10;
+    .container {
+      padding: 20px;
+      max-width: 1100px;
+      margin: auto;
     }
 
-    h1 {
-      font-size: 2rem;
-      margin-top: 20px;
-      font-weight: 600;
+    h2 {
+      color: var(--roxo);
+      text-align: center;
     }
 
-    p.sub {
-      font-size: 1.1rem;
-      margin-bottom: 40px;
-    }
-
-    /* Produtos */
-    .produtos {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      padding: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
     }
 
     .card {
       background: white;
-      padding: 20px;
-      border-radius: 20px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      padding: 15px;
+      border-radius: 14px;
+      box-shadow: 0 3px 12px var(--sombra);
+      text-align: center;
       transition: 0.3s;
+      animation: fadeIn 0.8s ease;
     }
 
     .card:hover {
-      transform: translateY(-6px);
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .card img {
-      width: 150px;
-      border-radius: 15px;
+      width: 100%;
+      border-radius: 10px;
     }
 
-    .card h3 {
-      margin: 10px 0 5px;
-      font-size: 1.1rem;
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: var(--rosa-escuro);
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
     }
 
-    footer {
-      padding: 20px;
-      background: #ffe0ef;
+    .btn:hover {
+      background: var(--roxo);
+    }
+
+    /* Seções extras */
+    section {
+      background: white;
+      padding: 30px;
+      border-radius: 14px;
       margin-top: 40px;
+      box-shadow: 0 3px 12px var(--sombra);
+      animation: fadeIn 1s ease;
     }
+
   </style>
 </head>
 <body>
 
-<header>
-  <div class="circle-bg">
-    <span class="star"></span>
-    <span class="star"></span>
-    <span class="star"></span>
-    <span class="star"></span>
-    <img src="logo.png.png" alt="Logo Encantorumis" class="logo-img" />
-  </div>
-  <h1>Encantorumis</h1>
-  <p class="sub">Amigurumis feitos com amor e magia ✨</p>
-</header>
+<header>Encantorumis ✨</header>
 
-<section class="produtos">
-  <div class="card">
-  <img src="logo.png" alt="Logo Encantorumis" class="logo-img">
-    <h3>Chapeuzinho Vermelho</h3>
-    <p>R$ 80,00</p>
-  </div>
+<nav>
+  <a href="#produtos">Produtos</a>
+  <a href="#sobre">Sobre</a>
+  <a href="#galeria">Galeria</a>
+  <a href="#contato">Contato</a>
+</nav>
 
-  <div class="card">
-    <img src="https://placehold.co/300x300" alt="produto" />
-    <h3>Bella</h3>
-    <p>R$ 150,00</p>
-  </div>
+<div class="container">
 
-  <div class="card">
-    <img src="https://placehold.co/300x300" alt="produto" />
-    <h3>Rapunzel</h3>
-    <p>R$ 150,00</p>
-  </div>
-</section>
+  <h2 id="produtos">Amigurumis Disponíveis</h2>
+  <div id="listaProdutos" class="grid"></div>
 
-<footer>
-  © 2025 Encantorumis — Feito com carinho 💖
-</footer>
+  <section id="sobre">
+    <h2>Sobre Nós</h2>
+    <p>Bem-vinda(o) ao Encantorumis! Criamos amigurumis feitos com amor, carinho e atenção aos detalhes. Cada peça é única e feita à mão com muito cuidado.</p>
+  </section>
+
+  <section id="galeria">
+    <h2>Galeria</h2>
+    <div class="grid" id="galeriaFotos"></div>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>Fale conosco pelo WhatsApp:</p>
+    <a class="btn" href="https://wa.me/55SEUNUMERO" target="_blank">📱 Chamar no WhatsApp</a>
+  </section>
+
+</div>
+
+<script>
+  const produtos = [
+    { nome: "Hogi Amigurumi", preco: "R$ 85,00", img: "https://encantorumis.github.io/imagens/hogi.jpg", msg: "Tenho interesse no Hogi!" },
+    { nome: "Baby Shark Rosa", preco: "R$ 75,00", img: "https://encantorumis.github.io/imagens/shark.jpg", msg: "Gostei do Baby Shark rosa!" },
+    { nome: "Porco Fofo", preco: "R$ 60,00", img: "https://encantorumis.github.io/imagens/porco.jpg", msg: "Quero saber sobre o porquinho!" },
+    { nome: "Coelhinho Love", preco: "R$ 70,00", img: "https://encantorumis.github.io/imagens/coelho.jpg", msg: "Informações do Coelhinho Love, por favor!" }
+  ];
+
+  const galeria = [
+    "https://encantorumis.github.io/imagens/galeria1.jpg",
+    "https://encantorumis.github.io/imagens/galeria2.jpg",
+    "https://encantorumis.github.io/imagens/galeria3.jpg",
+    "https://encantorumis.github.io/imagens/galeria4.jpg"
+  ];
+
+  const lista = document.getElementById("listaProdutos");
+  produtos.forEach(p => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <img src="${p.img}" alt="${p.nome}" />
+      <h3>${p.nome}</h3>
+      <p><strong>${p.preco}</strong></p>
+      <a class="btn" href="https://wa.me/55SEUNUMERO?text=${encodeURIComponent(p.msg)}" target="_blank">Comprar pelo WhatsApp</a>
+    `;
+    lista.appendChild(card);
+  });
+
+  const galeriaDiv = document.getElementById("galeriaFotos");
+  galeria.forEach(f => {
+    const img = document.createElement("img");
+    img.src = f;
+    img.style.width = "100%";
+    img.style.borderRadius = "12px";
+    img.style.boxShadow = "0 3px 12px var(--sombra)";
+    galeriaDiv.appendChild(img);
+  });
+</script>
 
 </body>
 </html>
