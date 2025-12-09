@@ -7,7 +7,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Encantorumis - Loja de Amigurumis</title>
-  <style>
+  <style .site-header {
+  background: linear-gradient(90deg, var(--rosa-escuro), var(--roxo));
+  padding: 14px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 64px;         /* ajuste a altura conforme preferir */
+  width: auto;
+  max-width: 240px;
+  display: block;
+}
+
+@media (max-width: 480px){
+  .logo { height: 48px; } /* menor em celulares */
+}
+>
     :root {
       --rosa-claro: #ffe4f2;
       --rosa-medio: #ff9aca;
