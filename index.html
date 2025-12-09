@@ -42,16 +42,9 @@
     }
 
     header {
-      background: linear-gradient(90deg, var(--rosa-escuro), var(--roxo));
-      padding: 25px;
-      text-align: center;
-      color: white;
-      font-size: 28px;
-      font-weight: bold;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+    <header class="site-header">
+  <img src="imagens/logo.png" alt="Logo Encantorumis" class="logo">
+</header> }
 
     nav {
       display: flex;
@@ -144,11 +137,17 @@
     }
 
   </style>.site-header {
-  background: linear-gradient(90deg, var(--rosa-escuro), var(--roxo));
-  padding: 14px 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px 0;
+}
+
+.logo {
+  height: 120px;
+  width: auto;
+}
+
 }
 
 .logo {
@@ -207,9 +206,9 @@
 <script>
   const produtos = [
     { nome: "Hogi Amigurumi", preco: "R$ 85,00", img: "https://encantorumis.github.io/imagens/hogi.jpg", msg: "Tenho interesse no Hogi!" },
-    { nome: "Baby Shark Rosa", preco: "R$ 75,00", img: "https://encantorumis.github.io/imagens/shark.jpg", msg: "Gostei do Baby Shark rosa!" },
-    { nome: "Porco Fofo", preco: "R$ 60,00", img: "https://encantorumis.github.io/imagens/porco.jpg", msg: "Quero saber sobre o porquinho!" },
-    { nome: "Coelhinho Love", preco: "R$ 70,00", img: "https://encantorumis.github.io/imagens/coelho.jpg", msg: "Informações do Coelhinho Love, por favor!" }
+    { nome: "Chapeuzinho Vermelho", preco: "R$ 80,00", img: "https://encantorumis.github.io/imagens/shark.jpg", msg: "Gostei do Baby Shark rosa!" },
+    { nome: "Bella", preco: "R$ 100,00", img: "https://encantorumis.github.io/imagens/porco.jpg", msg: "Quero saber sobre o porquinho!" },
+    { nome: "Rapunzel", preco: "R$ 100,00", img: "https://encantorumis.github.io/imagens/coelho.jpg", msg: "Informações do Coelhinho Love, por favor!" }
   ];
 
   const galeria = [
