@@ -1,244 +1,179 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Encantorumis - Amigurumis artesanais ✨</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encantorumis ✨ | Amigurumis feitos à mão</title>
 
-  <!-- Snipcart CSS -->
-  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
+    <!-- Snipcart -->
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
+    <script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
 
-  <!-- Snipcart JS -->
-  <script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
+    <!-- API KEY Snipcart -->
+    <div hidden id="snipcart" data-api-key="SUA_API_KEY_AQUI"></div>
 
-  <!-- Snipcart API Key -->
-  <div hidden id="snipcart" data-api-key="MjZiM2RkNDMtNzJhOS00NzA4LWJmNTktMGJlYzZiMTBmNmIzNjM5MDA5MzIzNDk1OTE3NTA0"></div>
+    <style>
+        :root {
+            --rosa-claro: #ffe4f2;
+            --rosa-medio: #ff9aca;
+            --rosa-escuro: #ff62b6;
+            --roxo: #c06cd9;
+            --sombra: rgba(0,0,0,0.12);
+        }
 
-  <style>
-    :root {
-      --rosa-claro: #ffe4f2;
-      --rosa-medio: #ff9aca;
-      --rosa-escuro: #ff62b6;
-      --roxo: #c06cd9;
-      --sombra: rgba(0,0,0,0.12);
-    }
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background: var(--rosa-claro);
+            color: #333;
+        }
 
-    body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: var(--rosa-claro);
-      color: #333;
-      padding-top: 20px;
-    }
+        header {
+            background: linear-gradient(90deg, var(--rosa-escuro), var(--roxo));
+            padding: 25px;
+            text-align: center;
+            color: white;
+            font-size: 26px;
+            font-weight: bold;
+        }
 
-    header {
-      background: linear-gradient(90deg, var(--rosa-escuro), var(--roxo));
-      padding: 25px;
-      text-align: center;
-      color: white;
-      font-size: 28px;
-      font-weight: bold;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      margin-top: 15px;
-    }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            background: white;
+            padding: 12px 0;
+            box-shadow: 0 2px 10px var(--sombra);
+        }
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      background: white;
-      padding: 12px 0;
-      box-shadow: 0 2px 10px var(--sombra);
-      position: sticky;
-      top: 70px;
-      z-index: 999;
-    }
+        nav a {
+            color: var(--rosa-escuro);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover { color: var(--roxo); }
 
-    nav a {
-      text-decoration: none;
-      color: var(--rosa-escuro);
-      font-weight: bold;
-      transition: 0.3s;
-    }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
 
-    nav a:hover { color: var(--roxo); }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
 
-    .container {
-      padding: 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 14px;
+            box-shadow: 0 3px 12px var(--sombra);
+            text-align: center;
+        }
 
-    h2 { color: var(--roxo); text-align: center; }
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 22px;
-    }
+        .btn {
+            background: var(--rosa-escuro);
+            color: white;
+            padding: 10px 15px;
+            display: inline-block;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
 
-    .card {
-      background: white;
-      padding: 15px;
-      border-radius: 14px;
-      box-shadow: 0 3px 12px var(--sombra);
-      text-align: center;
-      transition: 0.3s;
-      animation: fadeIn 0.8s ease;
-    }
-
-    .card:hover { transform: scale(1.05); }
-
-    .card img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 15px;
-      background: var(--rosa-escuro);
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    .btn:hover { background: var(--roxo); }
-
-    section {
-      background: white;
-      padding: 30px;
-      border-radius: 14px;
-      margin-top: 40px;
-      box-shadow: 0 3px 12px var(--sombra);
-      animation: fadeIn 1s ease;
-    }
-
-    /* Botões flutuantes */
-    .floating-buttons {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      z-index: 999;
-    }
-
-    .btn-float {
-      padding: 12px 18px;
-      color: white;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 3px 10px var(--sombra);
-      text-align: center;
-    }
-
-    .whatsapp { background: #25d366; }
-    .instagram { background: #d62976; }
-    .cart { background: #6a0dad; }
-  </style>
+        footer {
+            margin-top: 50px;
+            background: #ffffff;
+            padding: 30px;
+            text-align: center;
+            border-top: 3px solid var(--rosa-medio);
+            font-size: 14px;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- ⭐ LOGO NO TOPO - AGORA FUNCIONA ⭐ -->
-<div style="text-align:center; margin-top:10px;">
+<header>Encantorumis ✨ Amigurumis feitos com amor</header>
+
+<!-- Logo -->
+<div style="text-align:center; margin-top:20px;">
   <img src="https://encantorumis.github.io/imagens/logo.png"
-       alt="Logo Encantorumis"
-       style="width:150px;height:150px;border-radius:50%;object-fit:cover;
-       border:3px solid #f8d7ff;box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+       style="width:150px;height:150px;border-radius:50%;border:3px solid #ffb7e9;">
 </div>
-
-<h1 style="text-align:center; margin-top: 10px; color:#c06cd9;">
-  Encantorumis ✨
-</h1>
-
-<header>Encantorumis ✨</header>
 
 <nav>
-  <a href="#produtos">Produtos</a>
-  <a href="#sobre">Sobre</a>
-  <a href="#galeria">Galeria</a>
-  <a href="#contato">Contato</a>
+    <a href="#produtos">Produtos</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
 </nav>
-
-<!-- Botões flutuantes -->
-<div class="floating-buttons">
-  <a href="https://wa.me/5519990094328" target="_blank" class="btn-float whatsapp">WhatsApp</a>
-  <a href="https://instagram.com/encantorumis_" target="_blank" class="btn-float instagram">Instagram</a>
-  <a href="#" class="btn-float cart">Carrinho</a>
-</div>
 
 <div class="container">
 
-  <h2 id="produtos">Amigurumis Disponíveis</h2>
-  <div id="listaProdutos" class="grid"></div>
+<h2 id="produtos">✨ Produtos</h2>
 
-  <section id="sobre">
-    <h2>Sobre Nós</h2>
-    <p>Bem-vinda(o) ao Encantorumis! Criamos seu amiguinho com amor a cada ponto. Cada peça é única e feita à mão com muita magia.</p>
-  </section>
-
-  <section id="galeria">
-    <h2>Galeria</h2>
-    <div class="grid" id="galeriaFotos"></div>
-  </section>
-
-  <section id="contato">
-    <h2>Contato</h2>
-    <p>Encomendas personalizadas pelo WhatsApp:</p>
-    <a class="btn" href="https://wa.me/5519990094328" target="_blank">📱 Chamar no WhatsApp</a>
-  </section>
-
-</div>
+<div class="grid" id="listaProdutos"></div>
 
 <script>
-  const produtos = [
-    { nome: "Chaves", preco: "R$ 90,00", img: "https://encantorumis.github.io/imagens/Chaves.jpg", msg: "Tenho interesse no Chaves!" },
-    { nome: "Kiko", preco: "R$ 90,00", img: "https://encantorumis.github.io/imagens/Kiko.jpg", msg: "Gostei do Kiko!" },
-    { nome: "Chiquinha", preco: "R$ 90,00", img: "https://encantorumis.github.io/imagens/Chiquinha.jpg", msg: "Quero saber sobre a Chiquinha, por favor!" },
-    { nome: "Dona Florinda", preco: "R$ 90,00", img: "https://encantorumis.github.io/imagens/DonaFlorinda.jpg", msg: "Quero saber mais sobre a Dona Florinda, por favor!" },
-    { nome: "Chapolim Colorado", preco: "R$ 90,00", img: "https://encantorumis.github.io/imagens/ChapolimColorado.jpg", msg: "Quero saber sobre o Chapolim Colorado, por favor!" },
-    { nome: "Sr. Madruga", preco: "R$ 90,00", img: "https://encantorumis.github.io/imagens/SrMadruga.jpg", msg: "Quero saber sobre o Sr. Madruga, por favor!" },
-    { nome: "Turma Completa", preco: "R$ 510,00", img: "https://encantorumis.github.io/imagens/turmaEnfileirada.jpg", msg: "Quero saber sobre a Turma completa, por favor" }
-  ];
+const produtos = [
+  { nome:"Chaves", preco:90, img:"imagens/Chaves.jpg" },
+  { nome:"Kiko", preco:90, img:"imagens/Kiko.jpg" },
+  { nome:"Chiquinha", preco:90, img:"imagens/Chiquinha.jpg" },
+  { nome:"Dona Florinda", preco:90, img:"imagens/DonaFlorinda.jpg" },
+  { nome:"Chapolim", preco:90, img:"imagens/ChapolimColorado.jpg" },
+  { nome:"Sr Madruga", preco:90, img:"imagens/SrMadruga.jpg" }
+];
 
-  const galeria = produtos.map(p => p.img);
+const lista = document.getElementById("listaProdutos");
 
-  const lista = document.getElementById("listaProdutos");
-  produtos.forEach(p => {
-    const card = document.createElement("div");
-    card.className = "card";
-    card.innerHTML = `
-      <img src="${p.img}" alt="${p.nome}">
-      <h3>${p.nome}</h3>
-      <p><strong>${p.preco}</strong></p>
-      <a class="btn" href="https://wa.me/5519990094328?text=${encodeURIComponent(p.msg)}" target="_blank">Comprar pelo WhatsApp</a>
-    `;
-    lista.appendChild(card);
-  });
+produtos.forEach((p,i)=>{
+  lista.innerHTML += `
+    <div class="card">
+        <img src="${p.img}" alt="${p.nome}">
+        <h3>${p.nome}</h3>
+        <p><strong>R$ ${p.preco},00</strong></p>
 
-  const galeriaDiv = document.getElementById("galeriaFotos");
-  galeria.forEach(f => {
-    const img = document.createElement("img");
-    img.src = f;
-    img.style.width = "100%";
-    img.style.borderRadius = "12px";
-    img.style.boxShadow = "0 3px 12px var(--sombra)";
-    galeriaDiv.appendChild(img);
-  });
+        <a class="btn" href="produto.html?id=${i}">Ver detalhes</a>
+
+        <button 
+            class="snipcart-add-item btn"
+            data-item-id="${i}"
+            data-item-price="${p.preco}"
+            data-item-url="produto.html?id=${i}"
+            data-item-description="${p.nome} Amigurumi"
+            data-item-image="${p.img}"
+            data-item-name="${p.nome}">
+            Adicionar ao Carrinho
+        </button>
+    </div>
+  `;
+});
 </script>
+
+<section id="sobre" style="margin-top:40px;">
+    <h2>Sobre Nós</h2>
+    <p>Amigurumis feitos à mão com carinho e atenção aos detalhes.</p>
+</section>
+
+<section id="contato">
+    <h2>Contato</h2>
+    <p>Fale comigo pelo WhatsApp ❤</p>
+    <a class="btn" href="https://wa.me/5519990094328">WhatsApp</a>
+</section>
+
+<footer>
+    © 2025 Encantorumis ✨ | Feito com amor e crochê 🧶  
+    <br>Instagram: <a href="https://instagram.com/encantorumis_">@encantorumis_</a>
+</footer>
+
+</div>
 
 </body>
 </html>
