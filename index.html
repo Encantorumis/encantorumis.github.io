@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Encantorumis - 🧵 Amigurumis artesanais & personalizados, onde o crochê vira magia ✨</title>
+  <title>Encantorumis - Amigurumis artesanais ✨</title>
+
   <style>
     :root {
       --rosa-claro: #ffe4f2;
@@ -21,21 +22,6 @@
     }
 
     header {
-      <section class="produtos">
-    <h2>Nossos Produtos</h2>
-
-    <div class="grid-produtos">
-
-        <!-- PRODUTO 1 -->
-        <div class="produto">
-            <img src="https://photos.fife.usercontent.google.com/pw/AP1GczOh5EW5ZxFw9-r1K7BVWrmyKX8f7rsNyxY9E_5p-WSwDFPJ6EuFTPd2Dw=w479-h599-s-no-gm?authuser=0" alt="Chaves">
-            <h3>Chaves</h3>
-            <p class="preco">R$ 80,00</p>
-            <a class="comprar" href="https://wa.me/55SEUNUMERO?text=Quero%20comprar%20o%20amigurumi%20Chaves">
-                Comprar no WhatsApp
-            </a>
-        </div>
-
       background: linear-gradient(90deg, var(--rosa-escuro), var(--roxo));
       padding: 25px;
       text-align: center;
@@ -127,7 +113,6 @@
       background: var(--roxo);
     }
 
-    /* Seções extras */
     section {
       background: white;
       padding: 30px;
@@ -136,6 +121,31 @@
       box-shadow: 0 3px 12px var(--sombra);
       animation: fadeIn 1s ease;
     }
+
+    /* Botões flutuantes */
+    .floating-buttons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 999;
+    }
+
+    .btn-float {
+      padding: 12px 18px;
+      color: white;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 3px 10px var(--sombra);
+      text-align: center;
+    }
+
+    .whatsapp { background: #25d366; }
+    .instagram { background: #d62976; }
+    .cart { background: #6a0dad; }
 
   </style>
 </head>
@@ -150,13 +160,14 @@
   <a href="#contato">Contato</a>
 </nav>
 
-<div class=<!-- Botões fixos de ação -->
+<!-- Botões flutuantes -->
 <div class="floating-buttons">
   <a href="https://wa.me/5519992767421" target="_blank" class="btn-float whatsapp">WhatsApp</a>
   <a href="https://instagram.com/encantorumis_" target="_blank" class="btn-float instagram">Instagram</a>
   <a href="#" class="btn-float cart">Carrinho</a>
 </div>
->
+
+<div class="container">
 
   <h2 id="produtos">Amigurumis Disponíveis</h2>
   <div id="listaProdutos" class="grid"></div>
@@ -175,7 +186,6 @@
     <h2>Contato</h2>
     <p>Encomendas personalizadas pelo WhatsApp:</p>
     <a class="btn" href="https://wa.me/5519992767421" target="_blank">📱 Chamar no WhatsApp</a>
-    
   </section>
 
 </div>
@@ -185,27 +195,20 @@
     { nome: "Chaves", preco: "R$ 90,00", img: "https://encantorumis.github.io/imagens/chaves.jpg", msg: "Tenho interesse no Chaves!" },
     { nome: "Kiko", preco: "R$ 90,00", img: "https://encantorumis.github.io/imagens/kiko.jpg", msg: "Gostei do Kiko!" },
     { nome: "Chiquinha", preco: "R$ 90,00", img: "https://encantorumis.github.io/imagens/chiquinha.jpg", msg: "Quero saber sobre a Chiquinha!" },
-    { nome: "Dona Florinda", preco: "R$ 90,00", img: "https://encantorumis.github.io/imagens/DonaFlorinda.jpg", msg: "Informações da Dona Florinda por favor!" }
-    { nome: "Chapolim Colorado", preco: "R$ 90,00", img: "https://encantorumis.github.io/imagens/ChapolimColorado.jpg", msg: "Tenho interesse no Chapolim Colorado" },
+    { nome: "Dona Florinda", preco: "R$ 90,00", img: "https://encantorumis.github.io/imagens/DonaFlorinda.jpg", msg: "Informações da Dona Florinda por favor!" },
+    { nome: "Chapolim Colorado", preco: "R$ 90,00", img: "https://encantorumis.github.io/imagens/ChapolimColorado.jpg", msg: "Tenho interesse no Chapolim Colorado!" },
     { nome: "Sr. Madruga", preco: "R$ 90,00", img: "https://encantorumis.github.io/imagens/SrMadruga.jpg", msg: "Gostei do Sr. Madruga!" },
-    { nome: "Turma Completa", preco: "R$ 510,00", img: "https://encantorumis.github.io/imagens/turmaEnfileirada.jpg", msg: "Gostei da Turma completa" }, ];
-
-  const galeria = [
-    "https://encantorumis.github.io/imagens/chaves.jpg",
-    "https://encantorumis.github.io/imagens/kiko.jpg",
-    "https://encantorumis.github.io/imagens/chiquinha.jpg",
-    "https://encantorumis.github.io/imagens/DonaFlorinda.jpg",
-    "https://encantorumis.github.io/imagens/ChapolimColorado.jpg",
-    "https://encantorumis.github.io/imagens/SrMadruga.jpg",
-    "https://encantorumis.github.io/imagens/turmaEnfileirada.jpg"
+    { nome: "Turma Completa", preco: "R$ 510,00", img: "https://encantorumis.github.io/imagens/turmaEnfileirada.jpg", msg: "Gostei da Turma completa!" }
   ];
+
+  const galeria = produtos.map(p => p.img);
 
   const lista = document.getElementById("listaProdutos");
   produtos.forEach(p => {
     const card = document.createElement("div");
     card.className = "card";
     card.innerHTML = `
-      <img src="logo.png" alt="Logo Encantorumis" class="logo-img">
+      <img src="${p.img}" alt="${p.nome}">
       <h3>${p.nome}</h3>
       <p><strong>${p.preco}</strong></p>
       <a class="btn" href="https://wa.me/5519992767421?text=${encodeURIComponent(p.msg)}" target="_blank">Comprar pelo WhatsApp</a>
