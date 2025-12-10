@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Produto | Encantorumis</title>
+
+<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
+<script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
+
+<div hidden id="snipcart" data-api-key="SUA_API_KEY_AQUI"></div>
+
+<style>
+body {
+    font-family: "Poppins", sans-serif;
+    background: #ffe4f2;
+    padding: 20px;
+}
+.container {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.15);
+}
+img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.btn {
+    background: #ff62b6;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 8px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="produto"></div>
+
+<script>
+const produtos = [
+  { nome:"Chaves", preco:90, img:"imagens/Chaves.jpg" },
+  { nome:"Kiko", preco:90, img:"imagens/Kiko.jpg" },
+  { nome:"Chiquinha", preco:90, img:"imagens/Chiquinha.jpg" },
+  { nome:"Dona Florinda", preco:90, img:"imagens/DonaFlorinda.jpg" },
+  { nome:"Chapolim", preco:90, img:"imagens/ChapolimColorado.jpg" },
+  { nome:"Sr Madruga", preco:90, img:"imagens/SrMadruga.jpg" }
+];
+
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+const p = produtos[id];
+
+document.getElementById("produto").innerHTML = `
+    <img src="${p.img}" alt="${p.nome}">
+    <h1>${p.nome}</h1>
+    <h2>R$ ${p.preco},00</h2>
+    <p>Amigurumi artesanal feito com amor 🧶</p>
+
+    <button 
+        class="snipcart-add-item btn"
+        data-item-id="${id}"
+        data-item-price="${p.preco}"
+        data-item-url="produto.html?id=${id}"
+        data-item-description="${p.nome} Amigurumi"
+        data-item-image="${p.img}"
+        data-item-name="${p.nome}">
+        Adicionar ao Carrinho
+    </button>
+
+    <br><br>
+    <a class="btn" style="background:#c06cd9" href="index.html">Voltar</a>
+`;
+</script>
+
+</body>
+</html>
