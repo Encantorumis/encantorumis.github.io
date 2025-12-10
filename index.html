@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<!-- Snipcart CSS -->
-<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
-
-<!-- Snipcart JS -->
-<script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
-
-<!-- Snipcart API Key (substituir depois pela sua -->
-<div hidden id="snipcart" data-api-key="MjZiM2RkNDMtNzJhOS00NzA4LWJmNTktMGJlYzZiMTBmNmIzNjM5MDA5MzIzNDk1OTE3NTA0
-"></div>
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Encantorumis - Amigurumis artesanais ✨</title>
+
+  <!-- Snipcart CSS -->
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
+
+  <!-- Snipcart JS -->
+  <script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
+
+  <!-- Snipcart API Key -->
+  <div hidden id="snipcart" data-api-key="MjZiM2RkNDMtNzJhOS00NzA4LWJmNTktMGJlYzZiMTBmNmIzNjM5MDA5MzIzNDk1OTE3NTA0"></div>
 
   <style>
     :root {
@@ -24,25 +23,12 @@
       --sombra: rgba(0,0,0,0.12);
     }
 
-    <body>
-
-<div style="text-align:center; margin-top:18px;">
-  <img src="imagens/logo.png" alt="Logo Encantorumis"
-       style="width:150px;height:150px;border-radius:50%;object-fit:cover;border:3px solid #f8d7ff;box-shadow:0 4px 12px rgba(0,0,0,0.15);">
-</div>
-
-<h1 style="text-align:center; margin-top: 10px;">
-    Encantorumis ✨
-</h1>
-
-<header>Encantorumis ✨</header>
-
-      
-
+    body {
       margin: 0;
       font-family: "Poppins", sans-serif;
       background: var(--rosa-claro);
       color: #333;
+      padding-top: 20px;
     }
 
     header {
@@ -55,6 +41,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      margin-top: 15px;
     }
 
     nav {
@@ -76,9 +63,7 @@
       transition: 0.3s;
     }
 
-    nav a:hover {
-      color: var(--roxo);
-    }
+    nav a:hover { color: var(--roxo); }
 
     .container {
       padding: 20px;
@@ -86,10 +71,7 @@
       margin: auto;
     }
 
-    h2 {
-      color: var(--roxo);
-      text-align: center;
-    }
+    h2 { color: var(--roxo); text-align: center; }
 
     .grid {
       display: grid;
@@ -107,18 +89,16 @@
       animation: fadeIn 0.8s ease;
     }
 
-    .card:hover {
-      transform: scale(1.05);
+    .card:hover { transform: scale(1.05); }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
     }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
-    }
-
-    .card img {
-      width: 100%;
-      border-radius: 10px;
     }
 
     .btn {
@@ -132,10 +112,7 @@
       font-weight: bold;
       transition: 0.3s;
     }
-
-    .btn:hover {
-      background: var(--roxo);
-    }
+    .btn:hover { background: var(--roxo); }
 
     section {
       background: white;
@@ -170,10 +147,22 @@
     .whatsapp { background: #25d366; }
     .instagram { background: #d62976; }
     .cart { background: #6a0dad; }
-
   </style>
 </head>
+
 <body>
+
+<!-- ⭐ LOGO NO TOPO - AGORA FUNCIONA ⭐ -->
+<div style="text-align:center; margin-top:10px;">
+  <img src="https://encantorumis.github.io/imagens/logo.png"
+       alt="Logo Encantorumis"
+       style="width:150px;height:150px;border-radius:50%;object-fit:cover;
+       border:3px solid #f8d7ff;box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+</div>
+
+<h1 style="text-align:center; margin-top: 10px; color:#c06cd9;">
+  Encantorumis ✨
+</h1>
 
 <header>Encantorumis ✨</header>
 
