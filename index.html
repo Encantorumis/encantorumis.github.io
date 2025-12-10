@@ -137,57 +137,7 @@
       animation: fadeIn 1s ease;
     }
 
-  </style
-    <style>
-.produtos {
-    padding: 40px;
-    text-align: center;
-}
-
-.grid-produtos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-    margin-top: 20px;
-}
-
-.produto {
-    background: #ffffff;
-    border-radius: 15px;
-    padding: 15px;
-    box-shadow: 0 0 10px #00000015;
-}
-
-.produto img {
-    width: 100%;
-    border-radius: 12px;
-}
-
-.produto h3 {
-    margin: 10px 0 5px;
-}
-
-.preco {
-    font-weight: bold;
-    color: #6f52cf;
-    margin-bottom: 10px;
-}
-
-.comprar {
-    display: inline-block;
-    padding: 10px 15px;
-    background: #6f52cf;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.comprar:hover {
-    background: #8c6ff5;
-}
-</style>
->
+  </style>
 </head>
 <body>
 
@@ -232,17 +182,22 @@
 
 <script>
   const produtos = [
-    { nome: "Hogi Amigurumi", preco: "R$ 85,00", img: "https://encantorumis.github.io/imagens/hogi.jpg", msg: "Tenho interesse no Hogi!" },
-    { nome: "Baby Shark Rosa", preco: "R$ 75,00", img: "https://encantorumis.github.io/imagens/shark.jpg", msg: "Gostei do Baby Shark rosa!" },
-    { nome: "Porco Fofo", preco: "R$ 60,00", img: "https://encantorumis.github.io/imagens/porco.jpg", msg: "Quero saber sobre o porquinho!" },
-    { nome: "Coelhinho Love", preco: "R$ 70,00", img: "https://encantorumis.github.io/imagens/coelho.jpg", msg: "Informações do Coelhinho Love, por favor!" }
-  ];
+    { nome: "Chaves", preco: "R$ 90,00", img: "https://encantorumis.github.io/imagens/chaves.jpg", msg: "Tenho interesse no Chaves!" },
+    { nome: "Kiko", preco: "R$ 90,00", img: "https://encantorumis.github.io/imagens/kiko.jpg", msg: "Gostei do Kiko!" },
+    { nome: "Chiquinha", preco: "R$ 90,00", img: "https://encantorumis.github.io/imagens/chiquinha.jpg", msg: "Quero saber sobre a Chiquinha!" },
+    { nome: "Dona Florinda", preco: "R$ 90,00", img: "https://encantorumis.github.io/imagens/DonaFlorinda.jpg", msg: "Informações da Dona Florinda por favor!" }
+    { nome: "Chapolim Colorado", preco: "R$ 90,00", img: "https://encantorumis.github.io/imagens/ChapolimColorado.jpg", msg: "Tenho interesse no Chapolim Colorado" },
+    { nome: "Sr. Madruga", preco: "R$ 90,00", img: "https://encantorumis.github.io/imagens/SrMadruga.jpg", msg: "Gostei do Sr. Madruga!" },
+    { nome: "Turma Completa", preco: "R$ 510,00", img: "https://encantorumis.github.io/imagens/turmaEnfileirada.jpg", msg: "Gostei da Turma completa" }, ];
 
   const galeria = [
-    "https://encantorumis.github.io/imagens/galeria1.jpg",
-    "https://encantorumis.github.io/imagens/galeria2.jpg",
-    "https://encantorumis.github.io/imagens/galeria3.jpg",
-    "https://encantorumis.github.io/imagens/galeria4.jpg"
+    "https://encantorumis.github.io/imagens/chaves.jpg",
+    "https://encantorumis.github.io/imagens/kiko.jpg",
+    "https://encantorumis.github.io/imagens/chiquinha.jpg",
+    "https://encantorumis.github.io/imagens/DonaFlorinda.jpg",
+    "https://encantorumis.github.io/imagens/ChapolimColorado.jpg",
+    "https://encantorumis.github.io/imagens/SrMadruga.jpg",
+    "https://encantorumis.github.io/imagens/turmaEnfileirada.jpg"
   ];
 
   const lista = document.getElementById("listaProdutos");
