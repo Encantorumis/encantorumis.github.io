@@ -1,165 +1,130 @@
-/* ------------------------- */
-/*   PALETA PASTEL ENCANTORUMIS  */
-/* ------------------------- */
-:root {
-  --rosa-claro: #ffe4f2;
-  --rosa-medio: #ffb3d9;
-  --rosa-escuro: #ff62b6;
-  --roxo: #c06cd9;
-  --sombra: rgba(0, 0, 0, 0.15);
+/* styles.css - tema pastel Encantorumis + estrelas animadas */
+
+:root{
+  --rosa-claro:#ffeaf6;
+  --rosa-medio:#ffb6db;
+  --rosa-escuro:#ff62b6;
+  --roxo:#c06cd9;
+  --sombra: rgba(0,0,0,0.12);
 }
 
-body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  background: var(--rosa-claro);
-  color: #333;
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, var(--rosa-claro) 0%, #fff7ff 100%);
+  color:#333;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  min-height:100vh;
+  overflow-x:hidden;
 }
 
-/* ------------------------- */
-/*   HEADER COM LOGO   */
-/* ------------------------- */
-header {
-  text-align: center;
-  padding: 25px;
-  background: linear-gradient(90deg, var(--rosa-escuro), var(--roxo));
-  color: white;
-  box-shadow: 0 4px 12px var(--sombra);
+/* ===== estrelas de fundo ===== */
+.stars {
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background: radial-gradient(circle at 10% 20%, rgba(255,230,250,0.55) 0 2px, transparent 3px),
+              radial-gradient(circle at 80% 40%, rgba(230,240,255,0.5) 0 2px, transparent 3px),
+              radial-gradient(circle at 35% 75%, rgba(255,245,220,0.45) 0 2px, transparent 3px),
+              radial-gradient(circle at 70% 85%, rgba(230,255,245,0.45) 0 2px, transparent 3px);
+  animation: slow-rotate 60s linear infinite;
+  opacity:0.95;
+  filter: blur(0.4px);
+}
+@keyframes slow-rotate { from{transform:rotate(0)} to{transform:rotate(360deg)} }
+
+/* ===== container & layout ===== */
+header{
+  text-align:center;
+  padding:18px 20px 6px;
+  background: linear-gradient(90deg,var(--rosa-escuro),var(--roxo));
+  color:white;
+  box-shadow:0 6px 20px var(--sombra);
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+.header-inner{max-width:1100px;margin:auto;display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:center;padding:8px 16px}
+header img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid rgba(255,255,255,0.14);box-shadow:0 6px 18px rgba(0,0,0,0.18)}
+header h1{margin:0;font-size:22px;letter-spacing:0.6px;color:#fff}
+
+/* nav */
+nav{display:flex;justify-content:center;gap:20px;padding:12px 10px;background:transparent}
+nav a{color:white;text-decoration:none;font-weight:600;opacity:0.95}
+nav a:hover{opacity:1;text-decoration:underline}
+
+/* main container */
+.container{max-width:1100px;margin:30px auto;padding:0 18px}
+
+/* banner - opção B (ilustração + brilho) */
+.banner{
+  background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border-radius:16px;
+  padding:28px;
+  display:grid;
+  grid-template-columns: 1fr 360px;
+  gap:20px;
+  align-items:center;
+  margin-bottom:22px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.06);
+  overflow:hidden;
+}
+.banner-left h2{font-size:28px;margin:0 0 10px;color:var(--roxo)}
+.banner-left p{margin:0 0 12px;line-height:1.5;color:#4a3b4e}
+.banner-art{
+  width:100%;
+  height:260px;
+  border-radius:12px;
+  background: url('imagens/banner-amu.jpg') center/cover no-repeat;
+  box-shadow: inset 0 0 60px rgba(255,255,255,0.06);
+  position:relative;
+}
+.banner-cta{margin-top:12px}
+.banner .btn{background:linear-gradient(90deg,var(--rosa-escuro),#b468d6)}
+
+/* grid de produtos */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{background:white;border-radius:12px;padding:14px;text-align:center;box-shadow:0 6px 20px rgba(0,0,0,0.06);transition:transform .18s ease}
+.card img{width:100%;height:220px;object-fit:cover;border-radius:10px;margin-bottom:10px}
+.card h3{margin:6px 0 6px;color:var(--roxo)}
+.card p.price{margin:4px 0;font-weight:700;color:var(--rosa-escuro)}
+.card .actions{display:flex;gap:8px;justify-content:center;margin-top:8px}
+
+/* botão secundário */
+.btn-ghost{background:transparent;border:1px solid #eee;padding:9px 12px;border-radius:10px;color:var(--roxo)}
+.btn-ghost:hover{transform:translateY(-3px)}
+
+/* floating buttons */
+.floating-buttons{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:10px;z-index:60}
+.btn-float{padding:12px 14px;border-radius:50px;color:white;text-decoration:none;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,0.12)}
+.whatsapp{background:#25D366}
+.instagram{background:#E1306C}
+.cart{background:linear-gradient(90deg,var(--roxo),var(--rosa-escuro))}
+
+/* footer profissional */
+footer{background:#fff;padding:28px 18px;margin-top:34px;border-top:6px solid var(--rosa-medio)}
+.footer-inner{max-width:1100px;margin:auto;display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start;justify-content:space-between}
+.footer-left{max-width:480px}
+.footer-links{display:flex;gap:12px;flex-wrap:wrap}
+.footer-links a{color:var(--roxo);text-decoration:none;font-weight:600}
+
+/* product page small tweaks */
+.product-wrap{display:grid;grid-template-columns:1fr 380px;gap:18px;align-items:start}
+.product-wrap img{width:100%;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.06)}
+
+/* responsive */
+@media (max-width:900px){
+  .banner{grid-template-columns:1fr; padding:18px}
+  .product-wrap{grid-template-columns:1fr}
+  header img{width:96px;height:96px}
 }
 
-header img {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #fff;
-  box-shadow: 0 4px 14px var(--sombra);
-}
-
-header h1 {
-  margin-top: 12px;
-  font-size: 32px;
-}
-
-/* ------------------------- */
-/* NAV */
-/* ------------------------- */
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  padding: 10px;
-  background: white;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px var(--sombra);
-}
-
-nav a {
-  text-decoration: none;
-  color: var(--rosa-escuro);
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: var(--roxo);
-}
-
-/* ------------------------- */
-/* GRID DE PRODUTOS */
-/* ------------------------- */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 22px;
-}
-
-.card {
-  background: white;
-  padding: 15px;
-  border-radius: 14px;
-  text-align: center;
-  box-shadow: 0 3px 10px var(--sombra);
-  animation: fadeIn 0.7s ease;
-}
-
-.card img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px var(--sombra);
-}
-
-.card:hover {
-  transform: scale(1.03);
-  transition: 0.2s;
-}
-
-/* ------------------------- */
-/* BOTÃO */
-/* ------------------------- */
-.btn {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 10px 16px;
-  background: var(--rosa-escuro);
-  color: white;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.btn:hover {
-  background: var(--roxo);
-}
-
-/* ------------------------- */
-/* GALERIA */
-/* ------------------------- */
-.gallery img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 3px 12px var(--sombra);
-}
-
-/* ------------------------- */
-/* BOTÕES FLUTUANTES */
-/* ------------------------- */
-.floating-buttons {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.btn-float {
-  background: #ff62b6;
-  padding: 12px 20px;
-  color: white;
-  border-radius: 50px;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: bold;
-  box-shadow: 0 4px 10px var(--sombra);
-}
-
-.whatsapp { background: #25d366; }
-.instagram { background: #d62976; }
-.cart { background: #6a0dad; }
-
-/* ------------------------- */
-/* ANIMAÇÃO */
-/* ------------------------- */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+/* animations small */
+.pulse{animation:pulse 3s infinite ease-in-out}
+@keyframes pulse{
+  0%{transform:scale(1);opacity:1}
+  50%{transform:scale(1.03);opacity:.98}
+  100%{transform:scale(1);opacity:1}
 }
