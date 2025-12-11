@@ -1,98 +1,146 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Encantorumis - Amigurumis ✨</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Encantorumis ✨ — Loja de Amigurumis</title>
 
-  <link rel="stylesheet" href="styles.css" />
+  <!-- estilos -->
+  <link rel="stylesheet" href="styles.css">
 
-  <!-- Snipcart -->
+  <!-- Snipcart (carrinho) -->
   <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
   <script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
 
-  <div hidden id="snipcart" data-api-key="MjZiM2RkNDMtNzJhOS00NzA4LWJmNTktMGJlYzZiMTBmNmIzNjM5MDA5MzIzNDk1OTE3NTA0"></div>
+  <!-- insira sua chave do Snipcart abaixo -->
+  <div hidden id="snipcart" data-api-key="SUA_API_KEY_SNIPCART_AQUI"></div>
 </head>
-
 <body>
 
+<!-- estrelas de background -->
+<div class="stars" aria-hidden="true"></div>
+
 <header>
-  <img src="imagens/logo.png" alt="Logo Encantorumis">
-  <h1>Encantorumis ✨</h1>
+  <div class="header-inner">
+    <img src="imagens/logo.png" alt="Logo Encantorumis" class="pulse">
+    <div>
+      <h1>Encantorumis ✨</h1>
+      <nav>
+        <a href="#produtos">Produtos</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="encomendas.html">Encomendas</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </div>
 </header>
-
-<nav>
-  <a href="#produtos">Produtos</a>
-  <a href="#sobre">Sobre</a>
-  <a href="#galeria">Galeria</a>
-  <a href="#contato">Contato</a>
-</nav>
-
-<div class="floating-buttons">
-  <a href="https://wa.me/5519990094328" class="btn-float whatsapp" target="_blank">WhatsApp</a>
-  <a href="https://instagram.com/encantorumis_" class="btn-float instagram" target="_blank">Instagram</a>
-  <a href="#" class="btn-float cart snipcart-checkout">Carrinho</a>
-</div>
 
 <div class="container">
 
-  <h2 id="produtos">Amigurumis Disponíveis</h2>
-  <div id="listaProdutos" class="grid"></div>
+  <!-- BANNER (Opção B - ilustração) -->
+  <section class="banner" role="region" aria-label="Banner principal">
+    <div class="banner-left">
+      <h2>Amigurumis que contam histórias</h2>
+      <p>Peças artesanais, personalizadas e cheias de carinho. Encomende seu amigurumi e receba uma peça única ✨</p>
+      <div class="banner-cta">
+        <a class="btn" href="encomendas.html">Encomendar agora</a>
+        <a class="btn btn-ghost" href="#produtos">Ver produtos</a>
+      </div>
+    </div>
+    <div class="banner-art" aria-hidden="true"></div>
+  </section>
 
+  <!-- PRODUTOS -->
+  <h2 id="produtos">Nossos Amigurumis</h2>
+  <div class="grid" id="listaProdutos"></div>
+
+  <!-- GALERIA -->
   <h2 id="galeria">Galeria</h2>
   <div class="grid gallery" id="galeriaFotos"></div>
 
+  <!-- SOBRE (breve) -->
   <h2 id="sobre">Sobre Nós</h2>
-  <p style="background:white;padding:20px;border-radius:12px;box-shadow:0 3px 10px var(--sombra);">
-    Cada amigurumi do Encantorumis é feito com amor e carinho, totalmente artesanal,
-    pensado para encantar quem recebe ✨
+  <p style="background:white;padding:18px;border-radius:10px;box-shadow:0 3px 12px rgba(0,0,0,0.06);">
+    O Encantorumis é criado com pontinhos de afeto — cada peça é feita à mão com materiais de qualidade, acabamento caprichado e muito amor.
   </p>
 
+  <!-- CONTATO -->
   <h2 id="contato">Contato</h2>
-  <p>Entre em contato para encomendas especiais:</p>
-  <a class="btn" href="https://wa.me/5519990094328" target="_blank">Chamar no WhatsApp</a>
+  <p>Para encomendas e dúvidas, fale conosco:</p>
+  <a class="btn" href="https://wa.me/5519990094328" target="_blank" rel="noopener">Chamar no WhatsApp</a>
 
 </div>
 
+<!-- botões flutuantes -->
+<div class="floating-buttons">
+  <a class="btn-float whatsapp" href="https://wa.me/5519990094328" target="_blank" rel="noopener">WhatsApp</a>
+  <a class="btn-float instagram" href="https://instagram.com/encantorumis_" target="_blank" rel="noopener">Instagram</a>
+  <a class="btn-float cart snipcart-checkout" href="#" aria-label="Abrir carrinho">Carrinho</a>
+</div>
+
+<!-- footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <strong>Encantorumis</strong>
+      <p>Amigurumis artesanais | Encomendas personalizadas</p>
+      <div class="footer-links">
+        <a href="sobre.html">Sobre</a>
+        <a href="encomendas.html">Encomendas</a>
+        <a href="https://instagram.com/encantorumis_" target="_blank" rel="noopener">@encantorumis_</a>
+      </div>
+    </div>
+
+    <div>
+      <p>© 2025 Encantorumis — Feito com carinho 🧶</p>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS: produtos + galeria -->
 <script>
   const produtos = [
-    { nome: "Chapolim Colorado", preco: "90.00", img: "imagens/ChapolimColorado.jpg" },
-    { nome: "Chaves", preco: "90.00", img: "imagens/Chaves.jpg" },
-    { nome: "Chiquinha", preco: "90.00", img: "imagens/Chiquinha.jpg" },
-    { nome: "Dona Florinda", preco: "90.00", img: "imagens/DonaFlorinda.jpg" },
-    { nome: "Kiko", preco: "90.00", img: "imagens/Kiko.jpg" },
-    { nome: "Sr. Madruga", preco: "90.00", img: "imagens/SrMadruga.jpg" },
-    { nome: "Turma Completa", preco: "510.00", img: "imagens/turmaEnfileirada.jpg" }
+    { nome: "Chaves", preco: "90.00", img: "imagens/Chaves.jpg", desc:"Amigurumi Chaves 15cm" },
+    { nome: "Kiko", preco: "90.00", img: "imagens/Kiko.jpg", desc:"Amigurumi Kiko 15cm" },
+    { nome: "Chiquinha", preco: "90.00", img: "imagens/Chiquinha.jpg", desc:"Amigurumi Chiquinha 15cm" },
+    { nome: "Dona Florinda", preco: "90.00", img: "imagens/DonaFlorinda.jpg", desc:"Amigurumi Dona Florinda 15cm" },
+    { nome: "Chapolim Colorado", preco: "90.00", img: "imagens/ChapolimColorado.jpg", desc:"Amigurumi Chapolim 15cm" },
+    { nome: "Sr. Madruga", preco: "90.00", img: "imagens/SrMadruga.jpg", desc:"Amigurumi Sr. Madruga 15cm" },
+    { nome: "Turma Completa", preco: "510.00", img: "imagens/turmaEnfileirada.jpg", desc:"Conjunto Turma Completa" }
   ];
 
   const lista = document.getElementById("listaProdutos");
-  produtos.forEach((p, index) => {
+  produtos.forEach((p, i) => {
     const card = document.createElement("div");
-    card.className = "card";
-
+    card.className = 'card';
     card.innerHTML = `
       <img src="${p.img}" alt="${p.nome}">
       <h3>${p.nome}</h3>
-      <p><strong>R$ ${p.preco}</strong></p>
-
-      <button 
-        class="btn snipcart-add-item"
-        data-item-id="${index+1}"
-        data-item-name="${p.nome}"
-        data-item-price="${p.preco}"
-        data-item-url="/product.html?id=${index}"
-        data-item-image="${p.img}">
-        Adicionar ao Carrinho
-      </button>
+      <p class="price">R$ ${p.preco}</p>
+      <div class="actions">
+        <a class="btn btn-ghost" href="product.html?id=${i}">Ver detalhes</a>
+        <button
+          class="btn snipcart-add-item"
+          data-item-id="prod-${i}"
+          data-item-name="${p.nome}"
+          data-item-price="${p.preco}"
+          data-item-url="product.html?id=${i}"
+          data-item-description="${p.desc}"
+          data-item-image="${p.img}">
+          Adicionar
+        </button>
+      </div>
     `;
     lista.appendChild(card);
   });
 
-  const galeria = document.getElementById("galeriaFotos");
+  // galeria
+  const galeria = document.getElementById('galeriaFotos');
   produtos.forEach(p => {
-    const img = document.createElement("img");
-    img.src = p.img;
-    galeria.appendChild(img);
+    const im = document.createElement('img');
+    im.src = p.img;
+    im.alt = p.nome;
+    galeria.appendChild(im);
   });
 </script>
 
