@@ -11,14 +11,12 @@
   <!-- Snipcart (carrinho) -->
   <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
   <script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
-
-  <!-- chave do Snipcart -->
-  <div hidden id="snipcart" 
-       data-api-key="ST_MTc1NGVkN2YtYjZjOS00MTAxLWE2Y2YtODQ2YWRmY2RmYmExNjM5MDEwNzYwMzY5OTQ4MjA2">
-  </div>
 </head>
 
 <body>
+
+<!-- SNIPCART ROOT (fica dentro do body, no final também pode repetir) -->
+<div hidden id="snipcart" data-api-key="ST_MTc1NGVkN2YtYjZjOS00MTAxLWE2Y2YtODQ2YWRmY2RmYmExNjM5MDEwNzYwMzY5OTQ4MjA2"></div>
 
 <!-- fundo de estrelas -->
 <div class="stars" aria-hidden="true"></div>
@@ -40,7 +38,7 @@
 </header>
 
 <!-- CONTEÚDO -->
-<div class="container">
+<main class="container">
 
   <!-- BANNER principal -->
   <section class="banner" role="region" aria-label="Banner principal">
@@ -65,16 +63,16 @@
 
   <!-- SOBRE (curto) -->
   <h2 id="sobre">Sobre Nós</h2>
-  <p style="background:white;padding:18px;border-radius:10px;box-shadow:0 3px 12px rgba(0,0,0,0.06);">
+  <p class="sobre-box">
     O Encantorumis é criado com pontinhos de amor e magia — cada peça é feita à mão com materiais de qualidade, acabamento caprichado e muito amor.
   </p>
 
   <!-- CONTATO -->
   <h2 id="contato">Contato</h2>
-  <p>Para encomendas ou dúvidas, fale conosco:</p>
+  <p>Para encomendas e dúvidas, fale conosco:</p>
   <a class="btn" href="https://wa.me/5519990094328" target="_blank" rel="noopener">Chamar no WhatsApp</a>
 
-</div>
+</main>
 
 <!-- BOTÕES FLUTUANTES -->
 <div class="floating-buttons">
@@ -97,22 +95,22 @@
     </div>
 
     <div>
-      <p>© 2025 Encantorumis — Feito com amor 🧶</p>
+      <p>© 2025 Encantorumis — Feito com carinho 🧶</p>
     </div>
   </div>
 </footer>
 
-<!-- SCRIPT: produtos + galeria -->
+<!-- SCRIPTS: produtos + galeria -->
 <script>
   const produtos = [
-    { nome: "Chapolim Colorado", preco: "90.00", img: "imagens/ChapolimColorado.jpg", desc:"Amigurumi Chapolim 15cm" },
     { nome: "Chaves", preco: "90.00", img: "imagens/Chaves.jpg", desc:"Amigurumi Chaves 15cm" },
+    { nome: "Kiko", preco: "90.00", img: "imagens/Kiko.jpg", desc:"Amigurumi Kiko 15cm" },
     { nome: "Chiquinha", preco: "90.00", img: "imagens/Chiquinha.jpg", desc:"Amigurumi Chiquinha 15cm" },
     { nome: "Dona Florinda", preco: "90.00", img: "imagens/DonaFlorinda.jpg", desc:"Amigurumi Dona Florinda 15cm" },
-    { nome: "Kiko", preco: "90.00", img: "imagens/Kiko.jpg", desc:"Amigurumi Kiko 15cm" },
+    { nome: "Chapolim Colorado", preco: "90.00", img: "imagens/ChapolimColorado.jpg", desc:"Amigurumi Chapolim 15cm" },
     { nome: "Sr. Madruga", preco: "90.00", img: "imagens/SrMadruga.jpg", desc:"Amigurumi Sr. Madruga 15cm" },
     { nome: "Turma Completa", preco: "510.00", img: "imagens/turmaEnfileirada.jpg", desc:"Conjunto Turma Completa" }
-      ];
+  ];
 
   const lista = document.getElementById("listaProdutos");
   produtos.forEach((p, i) => {
