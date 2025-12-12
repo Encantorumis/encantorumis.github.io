@@ -57,9 +57,7 @@
   <h2 id="produtos">Nossos Amigurumis</h2>
   <div class="grid" id="listaProdutos"></div>
 
-  <!-- GALERIA -->
-  <h2 id="galeria">Galeria</h2>
-  <div class="grid gallery" id="galeriaFotos"></div>
+
 
   <!-- SOBRE (curto) -->
   <h2 id="sobre">Sobre Nós</h2>
@@ -137,14 +135,7 @@
     lista.appendChild(card);
   });
 
-  // galeria
-  const galeria = document.getElementById('galeriaFotos');
-  produtos.forEach(p => {
-    const im = document.createElement('img');
-    im.src = p.img;
-    im.alt = p.nome;
-    galeria.appendChild(im);
-  });
+  
 </script>
 
 </body>
