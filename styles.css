@@ -1,4 +1,7 @@
-/* styles.css - tema pastel Encantorumis */
+/* =========================================================
+   TEMA PASTEL ENCANTORUMIS — styles.css COMPLETO
+   ========================================================= */
+
 :root{
   --rosa-claro:#ffeaf6;
   --rosa-medio:#ffb6db;
@@ -8,24 +11,31 @@
   --texto:#4a3b4e;
 }
 
-*{box-sizing:border-box}
+*{ box-sizing:border-box; }
+
 body{
   margin:0;
-  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-
-  /* 🌸 FUNDO COM O BANNER */
-  background: 
-      linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),
-      url("imagens/banner-amu.jpg.png") center/cover no-repeat fixed;
-
+  font-family:"Poppins", system-ui, sans-serif;
+  background: url("imagens/banner-amu.jpg.png") center/cover no-repeat fixed;
   color:var(--texto);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
   min-height:100vh;
+  -webkit-font-smoothing:antialiased;
 }
 
+/* =========================================================
+   HEADER
+   ========================================================= */
 
-/* header */
+header{
+  position:sticky;
+  top:0;
+  background:linear-gradient(90deg,var(--rosa-escuro),var(--roxo));
+  padding:16px 0;
+  color:#fff;
+  z-index:60;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
 .header-inner{
   max-width:1100px;
   margin:auto;
@@ -37,23 +47,13 @@ body{
   padding:8px 16px;
 }
 
-header{
-  position:sticky;
-  top:0;
-  background:linear-gradient(90deg,var(--rosa-escuro),var(--roxo));
-  padding:16px 0;
-  color:#fff;
-  z-index:60;
-  box-shadow:0 6px 18px rgba(0,0,0,0.08)
-}
-
 header img{
   width:110px;
   height:110px;
   border-radius:50%;
   object-fit:cover;
   border:4px solid rgba(255,255,255,0.12);
-  box-shadow:0 6px 18px rgba(0,0,0,0.18)
+  box-shadow:0 6px 18px rgba(0,0,0,0.18);
 }
 
 header h1{
@@ -61,7 +61,6 @@ header h1{
   font-size:22px;
 }
 
-/* nav links inside header */
 header nav{
   display:flex;
   gap:16px;
@@ -75,36 +74,44 @@ header a{
   font-weight:600;
 }
 
-/* banner */
-.banner{
-  max-width:1100px;
-  margin:26px auto;
-  padding:22px;
-  display:grid;
-  grid-template-columns:1fr 360px;
-  gap:18px;
-  align-items:center;
-  border-radius:12px;
-  background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-  box-shadow:0 8px 30px rgba(0,0,0,0.06);
-}
+/* =========================================================
+   CONTAINER
+   ========================================================= */
 
-/* 🎀 AQUI O BANNER É CARREGADO */
-.banner-art{
-  width:100%;
-  height:260px;
-  border-radius:12px;
-  background:url('imagens/banner-amu.jpg.png') center/cover no-repeat;
-}
-
-/* container */
 .container{
   max-width:1100px;
   margin:auto;
   padding:0 18px;
 }
 
-/* grid produtos */
+/* =========================================================
+   BANNER — sem imagem repetida
+   ========================================================= */
+
+.banner{
+  max-width:1100px;
+  margin:26px auto;
+  padding:22px;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+  align-items:center;
+  border-radius:12px;
+  background:rgba(255,255,255,0.45);
+ backdrop-filter:blur(6px);
+  box-shadow:0 8px 30px rgba(0,0,0,0.06);
+}
+
+.banner h2{
+  color:var(--roxo);
+  font-size:26px;
+  margin:0 0 10px;
+}
+
+/* =========================================================
+   PRODUTOS
+   ========================================================= */
+
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
@@ -118,6 +125,10 @@ header a{
   text-align:center;
   box-shadow:0 6px 20px rgba(0,0,0,0.06);
   transition:transform .18s ease;
+}
+
+.card:hover{
+  transform:scale(1.03);
 }
 
 .card img{
@@ -146,58 +157,87 @@ header a{
   margin-top:8px;
 }
 
-/* buttons */
-/* Botões flutuantes 100% centralizados e redondos */
-.btn-float {
-  width: 56px;          /* tamanho do botão */
-  height: 56px;
-  border-radius: 50%;   /* deixa perfeitamente redondo */
-
-  display: flex;        /* centraliza horizontalmente */
-  justify-content: center;
-  align-items: center;  /* centraliza verticalmente */
-
-  background-size: 70%; /* tamanho perfeito do ícone */
-  background-position: center;
-  background-repeat: no-repeat;
-
-  border: none;
-  padding: 0;
-  cursor: pointer;
-
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* BOTÕES */
+.btn{
+  display:inline-block;
+  margin-top:12px;
+  padding:10px 16px;
+  background:var(--rosa-escuro);
+  color:white;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:700;
 }
 
-/* Hover suave */
-.btn-float:hover {
-  transform: scale(1.10);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+.btn-ghost{
+  background:transparent;
+  border:1px solid #eee;
+  padding:9px 12px;
+  border-radius:10px;
+  color:var(--roxo);
 }
 
-.icon-btn svg {
-  width: 28px;
-  height: 28px;
-  fill: white;
+/* =========================================================
+   BOTÕES FLUTUANTES COM ÍCONES
+   ========================================================= */
+
+.floating-buttons{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  z-index:100;
 }
 
-.whatsapp { background:#25D366; }
-.instagram { background:#E1306C; }
-.cart { background:linear-gradient(90deg, #c06cd9, #ff62b6); }
+.btn-float{
+  width:58px;
+  height:58px;
 
-.floating-buttons {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  z-index: 100;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background-size:65%;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  box-shadow:0 4px 12px rgba(0,0,0,0.10);
+  cursor:pointer;
+
+  transition:transform 0.20s ease, box-shadow 0.20s ease;
+  border:none;
+  padding:0;
 }
 
+/* ÍCONES */
+.whatsapp{
+  background-color:#25D366;
+  background-image:url("imagens/icon-whatsapp.png");
+}
 
+.instagram{
+  background-color:#E1306C;
+  background-image:url("imagens/icon-instagram.png");
+}
 
-/* footer */
+.cart{
+  background:linear-gradient(90deg,#c06cd9,#ff62b6);
+  background-image:url("imagens/icon-cart.png");
+}
+
+/* Hover */
+.btn-float:hover{
+  transform:scale(1.10);
+  box-shadow:0 6px 18px rgba(0,0,0,0.18);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
 footer{
   background:#fff;
   padding:28px 18px;
@@ -211,7 +251,6 @@ footer{
   display:flex;
   gap:20px;
   flex-wrap:wrap;
-  align-items:flex-start;
   justify-content:space-between;
 }
 
@@ -221,17 +260,12 @@ footer{
   font-weight:600;
 }
 
-/* small */
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
 @media(max-width:900px){
-  .banner{
-    grid-template-columns:1fr;
-    padding:14px;
-  }
-  header img{
-    width:86px;
-    height:86px;
-  }
-  .card img{
-    height:180px;
-  }
+  .banner{ padding:14px; }
+  header img{ width:86px;height:86px; }
+  .card img{ height:180px; }
 }
