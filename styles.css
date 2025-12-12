@@ -147,27 +147,32 @@ header a{
 }
 
 /* buttons */
-/* Botões flutuantes menores e mais suaves */
+/* Botões flutuantes 100% centralizados e redondos */
 .btn-float {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  display: flex;
+  width: 56px;          /* tamanho do botão */
+  height: 56px;
+  border-radius: 50%;   /* deixa perfeitamente redondo */
+
+  display: flex;        /* centraliza horizontalmente */
   justify-content: center;
-  align-items: center;
-  padding: 0;
-  border: none;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.10);
-  background-size: 60%;
+  align-items: center;  /* centraliza verticalmente */
+
+  background-size: 70%; /* tamanho perfeito do ícone */
   background-position: center;
   background-repeat: no-repeat;
-  transition: transform .2s ease, box-shadow .2s ease;
+
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Efeito suave no hover */
+/* Hover suave */
 .btn-float:hover {
-  transform: scale(1.08);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.14);
+  transform: scale(1.10);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
 }
 
 .icon-btn svg {
