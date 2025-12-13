@@ -340,3 +340,47 @@ footer {
   box-shadow: 0 18px 40px rgba(0,0,0,0.18);
 }
 
+.colecoes {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.colecoes h2 {
+  font-size: 2rem;
+  margin-bottom: 36px;
+  color: #c06cd9;
+}
+
+.colecoes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 36px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.colecao-item {
+  text-decoration: none;
+  color: #444;
+  transition: transform .25s ease;
+}
+
+.colecao-item img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+  background: white;
+}
+
+.colecao-item span {
+  display: block;
+  margin-top: 14px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.colecao-item:hover {
+  transform: scale(1.08);
+}
