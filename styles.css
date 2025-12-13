@@ -1,204 +1,123 @@
-/* ===============================
-   RESET E VARIÁVEIS
-================================ */
 :root {
-  --rosa-claro: #ffeaf6;
-  --rosa-medio: #ffb6db;
-  --rosa-escuro: #ff62b6;
-  --roxo: #c06cd9;
-  --texto: #4a3b4e;
-  --branco: #ffffff;
+  --rosa:#ff62b6;
+  --roxo:#c06cd9;
+  --texto:#4a3b4e;
 }
 
+/* RESET SEGURO */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
-/* ===============================
-   BODY
-================================ */
 body {
-  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin: 0;
+  font-family: "Poppins", Arial, sans-serif;
   color: var(--texto);
-  min-height: 100vh;
-  overflow-x: hidden;
+  background: #fff;
 }
 
-/* ===============================
-   FUNDO COM BANNER
-================================ */
+/* FUNDO COM BANNER */
 .background-banner {
   position: fixed;
   inset: 0;
-  background-image: url("imagens/banner-amu.jpg.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: blur(6px) brightness(0.85);
-  z-index: -2;
+  background: url("imagens/banner-amu.jpg.png") center / cover no-repeat;
+  opacity: 0.15;
+  z-index: -1;
 }
 
-.background-banner::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 234, 246, 0.85),
-    rgba(255, 255, 255, 0.95)
-  );
-}
-
-/* ===============================
-   CONTEÚDO PRINCIPAL
-================================ */
-.main-content {
-  max-width: 780px;
-  margin: 0 auto;
-  padding: 48px 20px 100px;
+/* HEADER */
+.site-header {
   text-align: center;
+  padding: 60px 20px 30px;
 }
 
-/* ===============================
-   LOGO E TÍTULOS
-================================ */
 .logo {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
+  width: 140px;          /* LIMITADO */
+  max-width: 100%;
+  height: auto;
   border-radius: 50%;
-  margin-bottom: 14px;
-  border: 5px solid var(--branco);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  margin-bottom: 16px;
 }
 
-h1 {
-  font-size: 2.1rem;
-  margin-bottom: 10px;
-  color: var(--roxo);
+.site-header h1 {
+  margin: 0;
+  font-size: 2.4rem;
 }
 
 .subtitle {
-  font-size: 1.05rem;
-  line-height: 1.5;
-  margin-bottom: 40px;
-  color: #6b5a6f;
+  font-size: 1.1rem;
+  opacity: 0.8;
 }
 
-/* ===============================
-   CAIXAS DE CONTEÚDO
-================================ */
-.box {
-  background: var(--branco);
-  border-radius: 18px;
-  padding: 28px 24px;
-  margin-bottom: 28px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+/* CONTEÚDO */
+.content {
+  max-width: 800px;
+  margin: auto;
+  padding: 30px 20px;
 }
 
-.box h2 {
-  font-size: 1.4rem;
-  margin-bottom: 12px;
+section {
+  background: #ffffffdd;
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+h2 {
   color: var(--roxo);
 }
 
-.box p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 18px;
-}
-
-/* ===============================
-   BOTÕES
-================================ */
+/* BOTÕES */
 .btn {
   display: inline-block;
+  margin-top: 12px;
   padding: 12px 22px;
-  background: linear-gradient(90deg, var(--roxo), var(--rosa-escuro));
-  color: var(--branco);
+  background: var(--rosa);
+  color: #fff;
+  border-radius: 999px;
   text-decoration: none;
   font-weight: 600;
-  border-radius: 30px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* ===============================
-   ÍCONES FLUTUANTES
-================================ */
+/* ÍCONES FLUTUANTES */
 .floating-buttons {
   position: fixed;
   right: 18px;
   bottom: 18px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  z-index: 50;
+  gap: 12px;
 }
 
-.btn-float {
-  width: 56px;
-  height: 56px;
+.icon {
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   background-size: 60%;
   background-position: center;
   background-repeat: no-repeat;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-.btn-float:hover {
-  transform: scale(1.08);
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
-}
-
-.btn-float.whatsapp {
-  background-color: #25d366;
+.whatsapp {
+  background-color: #25D366;
   background-image: url("imagens/whatsapp.png");
 }
 
-.btn-float.instagram {
-  background-color: #e1306c;
+.instagram {
+  background-color: #E1306C;
   background-image: url("imagens/instagram.png");
 }
 
-.btn-float.cart {
+.cart {
   background-color: var(--roxo);
   background-image: url("imagens/carrinho.png");
 }
 
-/* ===============================
-   RODAPÉ
-================================ */
+/* FOOTER */
 footer {
-  background: var(--branco);
   text-align: center;
-  padding: 20px 14px;
-  font-size: 0.85rem;
-  color: #7a6a7f;
-  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.06);
-}
-
-/* ===============================
-   RESPONSIVO
-================================ */
-@media (max-width: 600px) {
-  .logo {
-    width: 120px;
-    height: 120px;
-  }
-
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  .subtitle {
-    font-size: 0.95rem;
-  }
+  padding: 30px 20px;
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
