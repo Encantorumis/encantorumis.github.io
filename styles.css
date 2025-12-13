@@ -379,6 +379,40 @@ footer {
   opacity: .7;
 }
 
+.home-clean {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.home-logo {
+  width: 160px;
+  margin-bottom: 20px;
+}
+
+.home-clean h1 {
+  font-size: 2.6rem;
+  margin: 10px 0;
+}
+
+.home-clean p {
+  font-size: 1.2rem;
+  max-width: 420px;
+  opacity: 0.85;
+}
+
+.btn-home {
+  margin-top: 30px;
+  font-size: 1.1rem;
+  padding: 14px 32px;
+  border-radius: 999px;
+}
+
+
 .colecao-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 16px 40px rgba(0,0,0,0.12);
