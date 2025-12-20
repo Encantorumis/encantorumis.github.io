@@ -1,87 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Encantorumis ✨</title>
 
+  <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
 
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <!-- Snipcart -->
-  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css">
   <script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
 </head>
 
 <body>
-  position: relative;
-  z-index: 1;
-}
 
-<!-- fundo com banner -->
-<div class="background-banner"></div>
+  <!-- FUNDO COM BANNER -->
+  <div class="background-banner"></div>
 
-<!-- SNIPCART ROOT -->
-<div hidden id="snipcart" data-api-key="SUA_CHAVE_AQUI"></div>
+  <!-- SNIPCART ROOT -->
+  <div hidden id="snipcart" data-api-key="SUA_CHAVE_SNIPCART_AQUI"></div>
 
-<!-- HEADER -->
-<header class="site-header">
-  <img src="imagens/logo.png" alt="Encantorumis" class="logo">
-  <h1>Encantorumis ✨</h1>
-  <p class="subtitle">Amigurumis artesanais feitos à mão com carinho</p>
-</header>
+  <!-- HEADER -->
+  <header class="site-header">
+    <img src="imagens/logo.png" alt="Encantorumis" class="logo">
+    <h1>Encantorumis ✨</h1>
+    <p class="subtitle">Amigurumis artesanais feitos com amor</p>
+  </header>
 
-<!-- CONTEÚDO -->
-<main class="content">
+  <!-- CONTEÚDO -->
+  <main class="content">
 
-    <!-- Nossos Produtos -->
-  <section>
-    <h2>Nossos Produtos</h2>
-    <p>
-      Confira nossos modelos de Amigurumis artesanais!
-    </p>
-    <a class="btn" href="amigurumis.html">Nossos Produtos</a>
-  </section>
+    <section>
+      <h2>Sobre Nós</h2>
+      <p>
+        O Encantorumis cria amigurumis artesanais com carinho, qualidade e personalidade.
+        Cada peça é feita à mão, pensada para encantar e contar histórias através do crochê.
+      </p>
+    </section>
 
-  
-  <!-- SOBRE -->
-  <section>
-    <h2>Sobre nós</h2>
-    <p>
-      O Encantorumis cria amigurumis únicos, feitos à mão com amor, cuidado
-      e atenção em cada detalhe. Cada peça é pensada para encantar.
-    </p>
-  </section>
+    <section>
+      <h2>Contato</h2>
+      <p>Fale conosco para dúvidas ou encomendas:</p>
+      <a class="btn" href="https://wa.me/5519990094328" target="_blank">
+        Chamar no WhatsApp
+      </a>
+    </section>
 
+    <section>
+      <h2>Encomendas</h2>
+      <p>
+        Trabalhamos com encomendas personalizadas, feitas especialmente para você.
+      </p>
+      <a class="btn" href="encomendas.html">
+        Fazer encomenda
+      </a>
+    </section>
 
-    <!-- ENCOMENDAS -->
-  <section>
-    <h2>Encomendas</h2>
-    <p>
-      Aceitamos encomendas personalizadas. Entre em contato para criar seu
-      amigurumi do jeitinho que você imagina.
-    </p>
-    <a class="btn" href="encomendas.html">Fazer encomenda</a>
-  </section>
+  </main>
 
-  <!-- CONTATO -->
-  <section>
-    <h2>Contato</h2>
-    <a class="btn" href="https://wa.me/5519990094328" target="_blank">WhatsApp</a>
-  </section>
+  <!-- ÍCONES FLUTUANTES -->
+  <div class="floating-buttons">
+    <a class="icon whatsapp" href="https://wa.me/5519990094328" target="_blank" aria-label="WhatsApp"></a>
+    <a class="icon instagram" href="https://instagram.com/encantorumis_" target="_blank" aria-label="Instagram"></a>
+    <a class="icon cart snipcart-checkout" href="#" aria-label="Carrinho"></a>
+  </div>
 
-</main>
-
-<!-- ÍCONES FLUTUANTES -->
-<div class="floating-buttons">
-  <a href="https://wa.me/5519990094328" class="icon whatsapp" aria-label="WhatsApp"></a>
-  <a href="https://instagram.com/encantorumis_" class="icon instagram" aria-label="Instagram"></a>
-  <a href="#" class="icon cart snipcart-checkout" aria-label="Carrinho"></a>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <p>© 2025 Encantorumis — Feito com carinho 🧶</p>
-</footer>
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Encantorumis — Feito com magia 🧶
+  </footer>
 
 </body>
 </html>
