@@ -10,6 +10,8 @@
 }
 
 body {
+  <div class="background-banner"></div>
+
   margin: 0;
   font-family: "Poppins", Arial, sans-serif;
   color: var(--texto);
