@@ -123,39 +123,59 @@ footer {
 }
 
 /* COLEÇÕES */
+.produtos-intro {
+  text-align: center;
+  margin: 40px 0 30px;
+}
+
+.produtos-intro h2 {
+  font-size: 28px;
+  color: var(--roxo);
+}
+
+.produtos-intro p {
+  max-width: 520px;
+  margin: 12px auto 0;
+  opacity: 0.9;
+}
+
 .colecoes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 22px;
+  gap: 26px;
+  margin-bottom: 50px;
 }
 
 .colecao-card {
-  background: #ffffffdd;
-  border-radius: 18px;
-  padding: 20px;
+  background: white;
+  border-radius: 20px;
+  padding: 26px 20px;
   text-align: center;
   text-decoration: none;
   color: var(--texto);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.08);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.colecao-card img {
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-  margin-bottom: 12px;
-}
-
-.colecao-card h3 {
-  margin: 0;
-  font-size: 1.2rem;
-  color: var(--roxo);
 }
 
 .colecao-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.12);
 }
+
+.colecao-card img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  margin-bottom: 14px;
+}
+
+.colecao-card span {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--roxo);
+}
+
 
 /* PÁGINA DE PRODUTO */
 .produto-page {
