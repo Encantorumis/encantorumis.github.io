@@ -30,12 +30,39 @@
 <section>
   <h2>Formulário de Encomenda</h2>
 
-  <p>Clique no botão abaixo para fazer sua encomenda pelo WhatsApp:</p>
+  <form id="form-encomenda">
 
-  <a class="btn" href="https://wa.me/5519990094328?text=Quero%20fazer%20uma%20encomenda%20de%20amigurumi" target="_blank">
-    Fazer Encomenda pelo WhatsApp
-  </a>
+    <label>Seu nome:</label>
+    <input type="text" id="nome" required>
+
+    <label>Personagem desejado:</label>
+    <input type="text" id="personagem" required>
+
+    <label>Tamanho aproximado:</label>
+    <select id="tamanho">
+      <option>10 cm</option>
+      <option>15 cm</option>
+      <option>20 cm</option>
+      <option>25 cm</option>
+      <option>30 cm</option>
+    </select>
+
+    <label>Cores principais:</label>
+    <input type="text" id="cores" placeholder="Ex: rosa claro e branco">
+
+    <label>Data desejada:</label>
+    <input type="date" id="data">
+
+    <label>Observações adicionais:</label>
+    <textarea id="obs" rows="4" placeholder="Detalhes, acessórios, nome bordado..."></textarea>
+
+    <a class="btn" id="enviarWhatsapp" target="_blank">
+      Enviar encomenda pelo WhatsApp
+    </a>
+
+  </form>
 </section>
+
 
 <section>
   <h2>Prazo de produção</h2>
