@@ -125,3 +125,16 @@ footer {
   font-size: 0.9rem;
   opacity: 0.8;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input, select, textarea {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-family: Poppins, Arial;
+}
