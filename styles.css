@@ -20,10 +20,14 @@ body {
 .background-banner {
   position: fixed;
   inset: 0;
- background: url("logo.png") center / contain no-repeat;
-  opacity: 0.15;
+  background-image: url("logo.png");
+  background-repeat: repeat;
+  background-size: 220px 220px;   /* ajuste o tamanho da logo */
+  background-position: center;
+  opacity: 0.12;                  /* suaviza o fundo */
   z-index: -1;
 }
+
 
 /* HEADER */
 .site-header {
