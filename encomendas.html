@@ -63,7 +63,6 @@
   </form>
 </section>
 
-
 <section>
   <h2>Prazo de produção</h2>
   <p>
@@ -76,6 +75,34 @@
 <footer>
   ✨ Encantorumis — Amigurumis feitos com amor ✨
 </footer>
+
+<!-- 🔥 SCRIPT COLOCADO NO LUGAR CERTO -->
+<script>
+document.getElementById("enviarWhatsapp").onclick = function () {
+
+  let nome = document.getElementById("nome").value;
+  let personagem = document.getElementById("personagem").value;
+  let tamanho = document.getElementById("tamanho").value;
+  let cores = document.getElementById("cores").value;
+  let data = document.getElementById("data").value;
+  let obs = document.getElementById("obs").value;
+
+  let texto = `Olá! Meu nome é ${nome}.
+Quero encomendar um amigurumi.
+
+Personagem: ${personagem}
+Tamanho: ${tamanho}
+Cores: ${cores}
+Data desejada: ${data}
+
+Observações:
+${obs}`;
+
+  let url = "https://wa.me/5519990094328?text=" + encodeURIComponent(texto);
+
+  this.href = url;
+};
+</script>
 
 </body>
 </html>
