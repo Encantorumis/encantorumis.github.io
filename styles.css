@@ -20,7 +20,7 @@ body {
 .background-banner {
   position: fixed;
   inset: 0;
-  background: url("imagens/banner-amu.jpg.png") center / cover no-repeat;
+ background: url("logo.png") center / contain no-repeat;
   opacity: 0.15;
   z-index: -1;
 }
