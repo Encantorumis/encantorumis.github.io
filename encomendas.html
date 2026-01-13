@@ -57,8 +57,15 @@
     <textarea id="obs" rows="4" placeholder="Detalhes, acessórios, nome bordado..."></textarea>
 
     <a class="btn" id="enviarWhatsapp" target="_blank">
-      Enviar encomenda pelo WhatsApp
-    </a>
+  Enviar encomenda pelo WhatsApp
+</a>
+
+<br><br>
+
+<a class="btn" id="enviarEmail" target="_blank">
+  Enviar encomenda por E-mail
+</a>
+
 
   </form>
 </section>
@@ -78,7 +85,7 @@
 
 <!-- 🔥 SCRIPT COLOCADO NO LUGAR CERTO -->
 <script>
-document.getElementById("enviarWhatsapp").onclick = function () {
+function montarTexto() {
 
   let nome = document.getElementById("nome").value;
   let personagem = document.getElementById("personagem").value;
@@ -87,7 +94,7 @@ document.getElementById("enviarWhatsapp").onclick = function () {
   let data = document.getElementById("data").value;
   let obs = document.getElementById("obs").value;
 
-  let texto = `Olá! Meu nome é ${nome}.
+  return `Olá! Meu nome é ${nome}.
 Quero encomendar um amigurumi.
 
 Personagem: ${personagem}
@@ -97,12 +104,25 @@ Data desejada: ${data}
 
 Observações:
 ${obs}`;
+}
 
+// WhatsApp
+document.getElementById("enviarWhatsapp").onclick = function () {
+  let texto = montarTexto();
   let url = "https://wa.me/5519990094328?text=" + encodeURIComponent(texto);
+  this.href = url;
+};
 
+// Email
+document.getElementById("enviarEmail").onclick = function () {
+  let texto = montarTexto();
+  let email = "encantorumis@gmail.com"; // 👉 coloque seu email aqui
+  let assunto = "Pedido de Encomenda Encantorumis";
+  let url = "mailto:" + email + "?subject=" + encodeURIComponent(assunto) + "&body=" + encodeURIComponent(texto);
   this.href = url;
 };
 </script>
+
 
 </body>
 </html>
