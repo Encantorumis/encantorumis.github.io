@@ -28,52 +28,45 @@
 </section>
 
 <section>
-  <h2>Formulário de Encomenda</h2>
+<h2>Formulário de Encomenda</h2>
 
-  <form id="form-encomenda">
+<form id="form-encomenda" action="https://formspree.io/f/xjggvzon" method="POST">
 
-    <label>Seu nome:</label>
-    <input type="text" id="nome" required>
+  <label>Seu nome:</label>
+  <input type="text" id="nome" name="nome" required>
 
-    <label>Personagem desejado:</label>
-    <input type="text" id="personagem" required>
+  <label>Personagem desejado:</label>
+  <input type="text" id="personagem" name="personagem" required>
 
-    <label>Tamanho aproximado:</label>
-    <select id="tamanho">
-      <option>10 cm</option>
-      <option>15 cm</option>
-      <option>20 cm</option>
-      <option>25 cm</option>
-      <option>30 cm</option>
-    </select>
+  <label>Tamanho aproximado:</label>
+  <select id="tamanho" name="tamanho">
+    <option>10 cm</option>
+    <option>15 cm</option>
+    <option>20 cm</option>
+    <option>25 cm</option>
+    <option>30 cm</option>
+  </select>
 
-    <label>Cores principais:</label>
-    <input type="text" id="cores" placeholder="Ex: rosa claro e branco">
+  <label>Cores principais:</label>
+  <input type="text" id="cores" name="cores" placeholder="Ex: rosa claro e branco">
 
-    <label>Data desejada:</label>
-    <input type="date" id="data">
+  <label>Data desejada:</label>
+  <input type="date" id="data" name="data">
 
-    <label>Observações adicionais:</label>
-    <textarea id="obs" rows="4" placeholder="Detalhes, acessórios, nome bordado..."></textarea>
+  <label>Observações adicionais:</label>
+  <textarea id="obs" name="observacoes" rows="4" placeholder="Detalhes, acessórios, nome bordado..."></textarea>
 
-    <a class="btn" id="enviarWhatsapp" target="_blank">
-  Enviar encomenda pelo WhatsApp
-</a>
+  <!-- BOTÃO QUE ENVIA DIRETO PARA O FORMSPREE -->
+  <button type="submit" class="btn">
+    Enviar pedido sem WhatsApp
+  </button>
 
-<br><br>
-
-<a class="btn" id="enviarEmail" target="_blank">
-  Enviar encomenda por E-mail
-</a>
-
-
-  </form>
-</section>
+</form>
 
 <section>
   <h2>Prazo de produção</h2>
   <p>
-    O prazo médio é de 10 a 25 dias, dependendo do modelo e da quantidade.
+    O prazo médio é de 10 a 25 dias, de acordo com o modelo e a quantidade de personagens.
   </p>
 </section>
 
