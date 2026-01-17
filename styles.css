@@ -138,3 +138,69 @@ input, select, textarea {
   border: 1px solid #ccc;
   font-family: Poppins, Arial;
 }
+/* ===== FORMULÁRIO FOFINHO ===== */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+form label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 6px;
+  color: var(--texto);
+}
+
+form input,
+form select,
+form textarea {
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 2px solid #f1d6ea;
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  background: #fff;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: var(--rosa);
+  box-shadow: 0 0 0 3px rgba(255, 98, 182, 0.2);
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* BOTÕES DO FORM */
+form .btn {
+  margin-top: 18px;
+  text-align: center;
+}
+
+/* BOTÃO WHATSAPP */
+#enviarWhatsapp {
+  display: block;
+  text-align: center;
+  margin-top: 14px;
+  background: #25D366;
+}
+
+#enviarWhatsapp:hover {
+  filter: brightness(1.05);
+}
+
+/* CAIXA DO FORM */
+section form {
+  background: #ffffffee;
+  padding: 22px;
+  border-radius: 20px;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+}
+
